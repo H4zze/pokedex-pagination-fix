@@ -16,7 +16,7 @@ export async function getPokemonDetails(id: string): Promise<PokemonDetails> {
       name: move.move.name,
       url: move.move.url,
     })),
-    sprite: pokeapiData.sprites.other["dream_world"].front_default, // Assuming you want all sprite URLs
+    sprite: pokeapiData.sprites.other["dream_world"].front_default,
   };
 
   return { ...pokemonDetails };

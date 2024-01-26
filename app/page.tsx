@@ -1,5 +1,5 @@
 import PokemonList from "../components/home/pokemon-list";
-import getPokemonList from "@/lib/services/pokeApi/getPokemonList";
+import getPokemonList from "@/lib/services/pokeapi/getPokemonList";
 
 export default async function Home({
   searchParams,

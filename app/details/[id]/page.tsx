@@ -1,6 +1,4 @@
-import { PokemonDetails } from "@/lib/interfaces/PokemonDetails";
 import PokemonDetailsCard from "@/components/details/pokemon-details-card";
-import BackButton from "@/components/details/back-button";
 import PokemonToggle from "@/components/details/pokemon-toggle";
 import { getPokemonDetails } from "@/lib/services/pokeApi/getPokemonDetails";
 
@@ -15,4 +13,12 @@ export default async function Details({ params }: { params: { id: string } }) {
       </div>
     </main>
   );
+}
+
+export async function generateStaticParams() {
+  const indices = Array.from({ length: 10 }, (_, i) => i + 1);
+
+  return indices.map((index) => ({
+    id: index.toString(),
+  }));
 }
