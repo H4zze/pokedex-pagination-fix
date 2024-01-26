@@ -1,8 +1,7 @@
 import { PokemonDetails } from "@/lib/interfaces/PokemonDetails";
 import { capName } from "@/lib/utils";
 
-export async function GET(request: Request, { params }: { params: { id: string } }) {
-  const { id } = params;
+export async function getPokemonDetails(id: string): Promise<PokemonDetails> {
   let pokeapiResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
   let pokeapiData = await pokeapiResponse.json();
 
@@ -20,7 +19,7 @@ export async function GET(request: Request, { params }: { params: { id: string }
     sprite: pokeapiData.sprites.other["dream_world"].front_default, // Assuming you want all sprite URLs
   };
 
-  return Response.json(pokemonDetails);
+  return { ...pokemonDetails };
 }
 
 function extractStats(stats: any[]) {

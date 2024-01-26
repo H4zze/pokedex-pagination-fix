@@ -1,14 +1,14 @@
 import PokemonList from "../components/home/pokemon-list";
-import { BASE_API_URL } from "@/lib/constants";
+import getPokemonList from "@/lib/services/pokeApi/getPokemonList";
 
-async function getPokemonListData() {
-  const res = await fetch(`${BASE_API_URL}/api/pokemon`);
-  const pokemonListData = await res.json();
-  return pokemonListData;
-}
-
-export default async function Home() {
-  const pokemonListData = await getPokemonListData();
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined };
+}) {
+  const limit = searchParams.limit || "10";
+  const offset = searchParams.offset || "0";
+  const pokemonListData = await getPokemonList({ limitQuery: limit, offsetQuery: offset });
 
   return (
     <main className="p-24 pt-32">
