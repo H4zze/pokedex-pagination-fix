@@ -48,12 +48,14 @@ export default function PokemonDetailsCard({ pokemonDetailsData }: { pokemonDeta
         <div className="flex px-6 md:px-12 lg:px-24 gap-6 pb-12">
           <div className="w-1/2 ">
             <div className="border-b-2 border-black"> Stats</div>
-            <DisplayStat statType="hp" statValue={pokemonDetailsData.stats.hp} />
-            <DisplayStat statType="attack" statValue={pokemonDetailsData.stats.attack} />
-            <DisplayStat statType="defense" statValue={pokemonDetailsData.stats.defense} />
-            <DisplayStat statType="speed" statValue={pokemonDetailsData.stats.speed} />
-            <DisplayStat statType="special_attack" statValue={pokemonDetailsData.stats.special_attack} />
-            <DisplayStat statType="special_defense" statValue={pokemonDetailsData.stats.special_defense} />
+            <div className="pt-3">
+              <DisplayStat statType="hp" statValue={pokemonDetailsData.stats.hp} />
+              <DisplayStat statType="attack" statValue={pokemonDetailsData.stats.attack} />
+              <DisplayStat statType="defense" statValue={pokemonDetailsData.stats.defense} />
+              <DisplayStat statType="speed" statValue={pokemonDetailsData.stats.speed} />
+              <DisplayStat statType="special_attack" statValue={pokemonDetailsData.stats.special_attack} />
+              <DisplayStat statType="special_defense" statValue={pokemonDetailsData.stats.special_defense} />
+            </div>
           </div>
           <div className="w-1/2 ">
             <div className="border-b-2 border-black">Moves</div>

@@ -2,9 +2,10 @@ import { PokemonDetails } from "@/lib/interfaces/PokemonDetails";
 import PokemonDetailsCard from "@/components/details/pokemon-details-card";
 import BackButton from "@/components/details/back-button";
 import PokemonToggle from "@/components/details/pokemon-toggle";
+import { BASE_API_URL } from "@/lib/constants";
 
 async function getPokemonDetailsData(id: string): Promise<PokemonDetails> {
-  const res = await fetch(`http://localhost:3000/api/pokemon/${id}`);
+  const res = await fetch(`${BASE_API_URL}/api/pokemon/${id}`);
   const pokemonDetailsData: PokemonDetails = await res.json();
   return pokemonDetailsData;
 }

@@ -1,7 +1,8 @@
 import PokemonList from "../components/home/pokemon-list";
+import { BASE_API_URL } from "@/lib/constants";
 
 async function getPokemonListData() {
-  const res = await fetch("http://localhost:3000/api/pokemon");
+  const res = await fetch(`${BASE_API_URL}/api/pokemon`);
   const pokemonListData = await res.json();
   return pokemonListData;
 }

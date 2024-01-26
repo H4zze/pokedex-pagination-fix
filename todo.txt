@@ -1,5 +1,14 @@
-1. Klura ut hur man får till getStaticProps att funka (Verkar bara gå på page nivå i /pages mapp, ej i /app??)
+publish test
+- Need to fix api calls
+  - Swap api url with process.env
+  - If doesnt work, create serverless functions OR just regular functions that call pokeapi
 
-Kika på https://www.youtube.com/watch?v=E1HzFvXgrCs&t=33s
+- find Stat icons
+- download stat icons
+- add stat icons to project
+- add stat icons to component
 
-eller https://www.youtube.com/watch?v=JaU9m19y8Gs
+list items width
+SSG
+move toggle buttons up
+pagination
