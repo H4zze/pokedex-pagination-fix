@@ -16,7 +16,7 @@ export default function Pagination({ page }: { page: any }) {
       </PaginationButton>
 
       {pages.map(({ pageIndex, isActive }: { pageIndex: number; isActive: boolean }) => (
-        <PaginationButton index={pageIndex} isActive={isActive}>
+        <PaginationButton key={pageIndex} index={pageIndex} isActive={isActive}>
           {pageIndex}
         </PaginationButton>
       ))}
