@@ -1,7 +1,4 @@
-publish test
-- Need to fix api calls
-  - Swap api url with process.env
-  - If doesnt work, create serverless functions OR just regular functions that call pokeapi
+- Try SSG
 
 - find Stat icons
 - download stat icons
@@ -9,6 +6,5 @@ publish test
 - add stat icons to component
 
 list items width
-SSG
 move toggle buttons up
 pagination

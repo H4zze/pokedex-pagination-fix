@@ -1,18 +1,21 @@
 import { PokemonListItem } from "@/lib/interfaces/PokemonListItem";
+import { convertToNumber } from "@/lib/utils";
 
 export const dynamic = "force-dynamic"; // defaults to auto
 
 // This API endpoint will return a list of Pokemon from the PokeAPI, but is limited to the first 151 Pokemon(Generation 1)
 export default async function getPokemonList({
-  limitQuery,
-  offsetQuery,
+  page,
+  limit,
 }: {
-  limitQuery: string | string[] | undefined;
-  offsetQuery: string | string[] | undefined;
+  page: string | string[];
+  limit: string | string[];
 }): Promise<PokemonListItem[]> {
-  // Get query parameters from the request
-  let offsetValue = convertToNumber(offsetQuery);
-  let limitValue = limitQuery === undefined ? 20 : convertToNumber(limitQuery); // Default limit to 20 if not provided
+  let limitValue = convertToNumber(limit, 20);
+  const pageValue = convertToNumber(page, 1);
+
+  // Calculate the offset value based on the page and limit values
+  let offsetValue = (pageValue - 1) * limitValue;
 
   // Validate query parameters to only allow numbers between 0 and 151
   offsetValue = Math.min(offsetValue, 151);
@@ -45,14 +48,5 @@ export default async function getPokemonList({
     // Catch any potential errors from the PokeAPI
   } catch (error) {
     return [];
-  }
-}
-
-function convertToNumber(value: any): number {
-  let num = Number(value);
-  if (isNaN(num)) {
-    return 0;
-  } else {
-    return num;
   }
 }

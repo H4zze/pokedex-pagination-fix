@@ -7,8 +7,8 @@ export default async function Home({
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
   const limit = searchParams.limit || "10";
-  const offset = searchParams.offset || "0";
-  const pokemonListData = await getPokemonList({ limitQuery: limit, offsetQuery: offset });
+  const page = searchParams.page || "1";
+  const pokemonListData = await getPokemonList({ limit, page });
 
   return (
     <main className="p-24 pt-32">
@@ -17,7 +17,7 @@ export default async function Home({
         <h3>Your trusted source for information about the Kanto region Pokemon (Gen 1).</h3>
       </section>
       <section className="w-full flex justify-center py-6">
-        <PokemonList listData={pokemonListData} />
+        <PokemonList listData={pokemonListData} page={page} />
       </section>
     </main>
   );

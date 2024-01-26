@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { Lilita_One, Inter } from "next/font/google";
+import { Lilita_One } from "next/font/google";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
 const lilita_one = Lilita_One({ weight: "400", subsets: ["latin"], variable: "--font-lilita-one" });
 
 export const revalidate = 3600; // Revalidate all data every hour

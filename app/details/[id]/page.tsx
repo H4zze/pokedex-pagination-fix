@@ -1,6 +1,6 @@
 import PokemonDetailsCard from "@/components/details/pokemon-details-card";
 import PokemonToggle from "@/components/details/pokemon-toggle";
-import { getPokemonDetails } from "@/lib/services/pokeApi/getPokemonDetails";
+import { getPokemonDetails } from "@/lib/services/pokeapi/getPokemonDetails";
 
 export default async function Details({ params }: { params: { id: string } }) {
   const pokemonDetailsData = await getPokemonDetails(params.id);
