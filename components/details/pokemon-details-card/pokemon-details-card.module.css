@@ -1,0 +1,20 @@
+.pokemon-image-wrapper {
+  @apply flex justify-center p-6 md:p-12 rounded-full;
+  min-width: 150px;
+  max-width: 300px;
+  background-image: url("/images/pokemon-spotlight-bg.jpg");
+  background-size: cover;
+  width: 40%;
+  z-index: 1;
+  border: 3px solid #000;
+}
+
+.pokemon-image-container {
+  @apply relative flex items-center justify-center w-full h-0;
+  padding-top: 100%;
+}
+
+.pokemon-image {
+  @apply absolute max-w-full max-h-full top-1/2 transform -translate-y-1/2;
+  object-fit: contain;
+}

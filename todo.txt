@@ -1,0 +1,5 @@
+1. Klura ut hur man får till getStaticProps att funka (Verkar bara gå på page nivå i /pages mapp, ej i /app??)
+
+Kika på https://www.youtube.com/watch?v=E1HzFvXgrCs&t=33s
+
+eller https://www.youtube.com/watch?v=JaU9m19y8Gs
