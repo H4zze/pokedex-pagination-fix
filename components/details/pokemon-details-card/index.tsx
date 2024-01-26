@@ -30,7 +30,7 @@ export default function PokemonDetailsCard({ pokemonDetailsData }: { pokemonDeta
           <div>
             <div className="flex gap-1">
               {pokemonDetailsData.types.map((type) => (
-                <Label>{type}</Label>
+                <Label key={type}>{type}</Label>
               ))}
             </div>
             <p>Types</p>
@@ -59,7 +59,7 @@ export default function PokemonDetailsCard({ pokemonDetailsData }: { pokemonDeta
             <div className="border-b-2 border-black">Moves</div>
             <div className="flex flex-wrap justify-center gap-1 pt-3">
               {pokemonDetailsData.moves.map((move) => (
-                <Label>{move.name}</Label>
+                <Label key={move.name}>{move.name}</Label>
               ))}
             </div>
           </div>
