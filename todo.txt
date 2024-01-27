@@ -1,4 +1,0 @@
-- find Stat icons
-- download stat icons
-- add stat icons to project
-- add stat icons to component
