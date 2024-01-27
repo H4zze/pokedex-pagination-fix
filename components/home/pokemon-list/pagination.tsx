@@ -11,7 +11,7 @@ export default function Pagination({ page }: { page: number }) {
   return (
     <div className="flex flex-row gap-1">
       <PaginationButton index={page - 1} disabled={!hasPrevious}>
-        Prev
+        «
       </PaginationButton>
 
       {pages.map(({ pageIndex, isActive }: { pageIndex: number; isActive: boolean }) => (
@@ -21,7 +21,7 @@ export default function Pagination({ page }: { page: number }) {
       ))}
 
       <PaginationButton index={page + 1} disabled={!hasNext}>
-        Next
+        »
       </PaginationButton>
     </div>
   );

@@ -11,7 +11,7 @@ export default async function Home({
   const pokemonListData = await getPokemonList({ limit, page });
 
   return (
-    <main className="p-24 pt-32">
+    <main className="p-24 pt-32 grow">
       <section className="w-full items-center justify-between text-center py-6">
         <h1>Welcome to Kantodex</h1>
         <h3>Your trusted source for information about Pokemon from Generation 1.</h3>

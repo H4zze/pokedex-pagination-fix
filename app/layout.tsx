@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={lilita_one.variable}>
+      <body className={`${lilita_one.variable} flex flex-col`}>
         <Header />
         {children}
         <Footer />
