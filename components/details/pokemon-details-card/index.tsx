@@ -1,9 +1,9 @@
 import { PokemonDetails } from "@/lib/interfaces/PokemonDetails";
-import BackButton from "@/components/details/back-button";
+import BackButton from "@/components/details/pokemon-details-card/back-button";
 import styles from "./pokemon-details-card.module.css";
 import Label from "@/components/details/pokemon-details-card/label";
 import DisplayStat from "@/components/details/pokemon-details-card/display-stat";
-import PokemonToggle from "@/components/details/pokemon-toggle";
+import PokemonToggle from "@/components/details/pokemon-details-card/pokemon-toggle";
 
 export default function PokemonDetailsCard({ pokemonDetailsData }: { pokemonDetailsData: PokemonDetails }) {
   return (
