@@ -1,14 +1,14 @@
 import Link from "next/link";
 
-export default function PokemonToggle({ currentIndex }: { currentIndex: string }) {
-  const [previousIndex, nextIndex] = calculateIndicies(parseInt(currentIndex));
+export default function PokemonToggle({ currentIndex }: { currentIndex: number }) {
+  const [previousIndex, nextIndex] = calculateIndicies(currentIndex);
   return (
-    <div className="flex gap-6">
+    <div className="flex justify-between gap-6 z-10 px-4 md:px-12 lg:px-24 absolute w-full bottom-0">
       <Link href={`/details/${previousIndex}`}>
-        <div className="bg-white/90 my-3 p-3 rounded">Previous</div>
+        <p className="lilita-one border-b-2 border-gray-300">« Prev #{previousIndex}</p>
       </Link>
       <Link href={`/details/${nextIndex}`}>
-        <div className="bg-white/90 my-3 p-3 rounded">Next</div>
+        <p className="lilita-one border-b-2 border-gray-300">Next #{nextIndex} »</p>
       </Link>
     </div>
   );

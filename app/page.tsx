@@ -14,7 +14,7 @@ export default async function Home({
     <main className="p-24 pt-32">
       <section className="w-full items-center justify-between text-center py-6">
         <h1>Welcome to Kantodex</h1>
-        <h3>Your trusted source for information about the Kanto region Pokemon (Gen 1).</h3>
+        <h3>Your trusted source for information about Pokemon from Generation 1.</h3>
       </section>
       <section className="w-full flex justify-center py-6">
         <PokemonList listData={pokemonListData} page={page} />

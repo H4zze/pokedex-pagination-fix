@@ -1,13 +1,12 @@
-import { pages } from "next/dist/build/templates/app-page";
 import Link from "next/link";
 
-export default function Pagination({ page }: { page: any }) {
+export default function Pagination({ page }: { page: number }) {
   const hasPrevious = page > 1;
   const hasNext = page < 16;
 
-  const startPage = page - 2 > 0 ? page - 2 : 1;
+  const firstPage = page - 2 > 0 ? (page > 14 ? 12 : page - 2) : 1;
 
-  const pages = Array.from({ length: 5 }, (_, i) => ({ pageIndex: i + startPage, isActive: i + startPage === page }));
+  const pages = Array.from({ length: 5 }, (_, i) => ({ pageIndex: i + firstPage, isActive: i + firstPage === page }));
 
   return (
     <div className="flex flex-row gap-1">
@@ -40,16 +39,15 @@ const PaginationButton = ({
   isActive?: boolean;
 }) => {
   return (
-    <Link href={`/?page=${index}`}>
-      <button
-        className={`w-8 h-8 border bg-white/90 rounded flex items-center justify-center ${
-          disabled ? "pointer-events-none" : ""
-        } ${isActive ? "bg-gray-300" : ""}`}
-        aria-label={`Go to page ${index}`}
-        aria-disabled={disabled}
-        tabIndex={disabled ? -1 : undefined}>
-        {children}
-      </button>
+    <Link
+      href={`/?page=${index}`}
+      className={`w-8 h-8 border rounded flex items-center justify-center ${disabled ? "pointer-events-none" : ""} ${
+        isActive ? "bg-gray-300" : "bg-white/90"
+      }`}
+      aria-label={`Go to page ${index}`}
+      aria-disabled={disabled}
+      tabIndex={disabled ? -1 : undefined}>
+      {children}
     </Link>
   );
 };

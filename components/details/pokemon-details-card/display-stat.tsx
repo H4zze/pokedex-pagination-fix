@@ -1,7 +1,7 @@
 export default function DisplayStat({ statType, statValue }: { statType: string; statValue: number }) {
   return (
-    <div className="bg-orange-300 p-1 rounded">
-      {statType}: {statValue}
+    <div className="flex pb-3">
+      <p className="font-medium">{statType}</p>: {statValue}
     </div>
   );
 }
