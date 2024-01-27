@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import useScroll from "@/lib/hooks/use-scroll";
 
 export default function NavBar() {
   return (
