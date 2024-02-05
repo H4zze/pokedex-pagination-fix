@@ -11,7 +11,7 @@ export default async function Home({
   const pageParam = +(searchParams.page || "1");
   const page = Math.min(
     +(searchParams.page || "1") < 1 ? 1 : pageParam,
-    16
+    Math.ceil(151 / +limit)
   ).toString();
 
   const pokemonListData = await getPokemonList({ limit, page });
